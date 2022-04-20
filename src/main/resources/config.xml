@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xmlns:c="http://www.springframework.org/schema/c"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+ http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://www.springframework.org/schema/context
+    http://www.springframework.org/schema/context/spring-context.xsd
+http://www.springframework.org/schema/p ">
+    <bean class="org.example.Address" name="add" c:street="qwe" c:city="dfg" c:country="fgh"/>
+
+    <bean class="org.example.Employee" name="emp1">
+        <property name="name" value="xyz"/>
+        <property name="age" value="23"/>
+        <property name="address" ref="add"/>
+        <property name="number">
+            <list>
+                <value>54554</value>
+                <value>549849865</value>
+            </list>
+        </property>
+    </bean>
+
+    <bean class="org.example.Employee" name="emp2" p:name="tyy" p:age="31" p:address-ref="add" p:number="486528 , 545468 , 54687"/>
+
+    <bean class="org.example.Employee" name="emp3">
+        <constructor-arg value="fre" type="String"/>
+        <constructor-arg value="25" type="int"/>
+        <constructor-arg ref="add"/>
+        <constructor-arg value="65445 , 8456, 46521"/>
+    </bean>
+
+    <bean class="org.example.Employee" name="emp4" c:name="gjvb" c:age="27" c:address-ref="add" c:number="56121 , 84561 , 7887455"/>
+</beans>
